@@ -16,5 +16,10 @@ namespace My_Notepad
         {
             InitializeComponent();
         }
+
+        private void fndToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
