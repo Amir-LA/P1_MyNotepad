@@ -52,5 +52,19 @@ namespace My_Notepad
             fontDialog1.ShowDialog();
             txtNotepad.Font = fontDialog1.Font;
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.IO.File.WriteAllText(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt", txtNotepad.BackColor.Name);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if(System.IO.File.Exists(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt") == true) { 
+            string s;
+            s = System.IO.File.ReadAllText(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt");
+            txtNotepad.BackColor = Color.FromName(s);
+            }
+        }
     }
 }
