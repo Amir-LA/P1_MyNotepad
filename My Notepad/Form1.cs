@@ -12,6 +12,9 @@ namespace My_Notepad
 {
     public partial class Form1 : Form
     {
+        string fn;
+        Boolean saveflag;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,6 +24,7 @@ namespace My_Notepad
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             Application.Exit();
         }
 
@@ -66,6 +70,7 @@ namespace My_Notepad
                 ToolStripMenuItem temp = new ToolStripMenuItem();
                 temp.Text = s;
                 Setbk(temp, null);
+                saveflag = true;
             //txtNotepad.BackColor = Color.FromName(s);
                 
             }
@@ -75,6 +80,105 @@ namespace My_Notepad
         {
 
             txtNotepad.WordWrap = wordWrapToolStripMenuItem.Checked;
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fn == null)
+            {
+                DialogResult x;
+                saveFileDialog1.DefaultExt = "txt";    
+                x=saveFileDialog1.ShowDialog();
+                if (x == DialogResult.Cancel)
+                {
+                    
+                  return;
+                }
+                    
+                fn = saveFileDialog1.FileName;
+            }
+            System.IO.File.WriteAllText(fn, txtNotepad.Text);
+            saveflag = true;
+            this.Text = fn;
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveflag == false)
+
+            {
+                DialogResult r;
+                r= MessageBox.Show("Do want to Save?", "Save",MessageBoxButtons.YesNo );
+                if (r == DialogResult.Yes)
+                {
+                    saveToolStripMenuItem_Click(null, null);
+                }
+                               
+                    txtNotepad.Text = null;
+                this.Text = "My Notepad";
+                    fn = null;
+                saveflag = true;
+
+
+                
+            }  
+                
+        }
+
+        private void txtNotepad_TextChanged(object sender, EventArgs e)
+        {
+            saveflag = false;
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Text File|*.txt|Document File|*.doc|All Files|*.*";
+            newToolStripMenuItem_Click(null, null);
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            openFileDialog1.ShowDialog();
+            fn = openFileDialog1.FileName;
+            txtNotepad.Text=System.IO.File.ReadAllText(fn);
+            saveflag = true;
+            this.Text = fn;
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            newToolStripMenuItem_Click(null, null);
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fn = null;
+            saveAsToolStripMenuItem_Click(null, null);
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(txtNotepad.SelectedText);
+        }
+
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtNotepad.SelectedText = Clipboard.GetText();
+        }
+
+        private void delToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtNotepad.SelectedText = "";
+
+        }
+
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            copyToolStripMenuItem_Click(null, null);
+            delToolStripMenuItem_Click(null, null);
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtNotepad.SelectAll();
         }
     }
 }
