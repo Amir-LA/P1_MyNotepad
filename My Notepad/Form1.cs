@@ -28,7 +28,7 @@ namespace My_Notepad
         {
             txtNotepad.BackColor = Color.FromName(((ToolStripMenuItem)sender).Text);
             foreach (ToolStripMenuItem x in backColorToolStripMenuItem.DropDownItems)
-                if (x == (sender))
+                if (x.Text == ((ToolStripMenuItem)sender).Text) 
                     x.Checked = true;
                 else
                     x.Checked = false;
@@ -63,8 +63,18 @@ namespace My_Notepad
             if(System.IO.File.Exists(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt") == true) { 
             string s;
             s = System.IO.File.ReadAllText(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt");
-            txtNotepad.BackColor = Color.FromName(s);
+                ToolStripMenuItem temp = new ToolStripMenuItem();
+                temp.Text = s;
+                Setbk(temp, null);
+            //txtNotepad.BackColor = Color.FromName(s);
+                
             }
+        }
+
+        private void wordWrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            txtNotepad.WordWrap = wordWrapToolStripMenuItem.Checked;
         }
     }
 }
