@@ -37,6 +37,7 @@ namespace My_Notepad
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdoup = new System.Windows.Forms.RadioButton();
             this.rdodown = new System.Windows.Forms.RadioButton();
+            this.btnfindnext = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,12 +53,13 @@ namespace My_Notepad
             // 
             // bntclose
             // 
-            this.bntclose.Location = new System.Drawing.Point(337, 59);
+            this.bntclose.Location = new System.Drawing.Point(337, 79);
             this.bntclose.Name = "bntclose";
             this.bntclose.Size = new System.Drawing.Size(75, 23);
             this.bntclose.TabIndex = 1;
             this.bntclose.Text = "Close";
             this.bntclose.UseVisualStyleBackColor = true;
+            this.bntclose.Click += new System.EventHandler(this.bntclose_Click);
             // 
             // label1
             // 
@@ -118,11 +120,22 @@ namespace My_Notepad
             this.rdodown.Text = "Down";
             this.rdodown.UseVisualStyleBackColor = true;
             // 
+            // btnfindnext
+            // 
+            this.btnfindnext.Location = new System.Drawing.Point(337, 41);
+            this.btnfindnext.Name = "btnfindnext";
+            this.btnfindnext.Size = new System.Drawing.Size(75, 23);
+            this.btnfindnext.TabIndex = 6;
+            this.btnfindnext.Text = "Find Next";
+            this.btnfindnext.UseVisualStyleBackColor = true;
+            this.btnfindnext.Click += new System.EventHandler(this.btnfindnext_Click);
+            // 
             // FrmFind
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 127);
+            this.Controls.Add(this.btnfindnext);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.hkmachcase);
             this.Controls.Add(this.txtfind);
@@ -149,5 +162,6 @@ namespace My_Notepad
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdoup;
         private System.Windows.Forms.RadioButton rdodown;
+        private System.Windows.Forms.Button btnfindnext;
     }
 }

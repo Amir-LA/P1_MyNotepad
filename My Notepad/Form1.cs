@@ -14,6 +14,7 @@ namespace My_Notepad
     {
         string fn;
         Boolean saveflag;
+        int i2,i3;
 
         public Form1()
         {
@@ -187,13 +188,13 @@ namespace My_Notepad
             f1.Show(this);
         }
 
-        public Boolean Findfunction(string s)
+        public Boolean Findfunction(string s) 
         {
             int i;
             i = txtNotepad.Text.IndexOf(s);
             if (i == -1)
             {
-                MessageBox.Show("Nof Found");
+                MessageBox.Show("NOT Found");
                 return false;
             }
             else
@@ -203,7 +204,29 @@ namespace My_Notepad
                 txtNotepad.Focus();
                 return true;
             }
+
         }
+
+        public Boolean FindNextfunction(string s)
+        {
+            int i;
+            i = txtNotepad.Text.IndexOf(s,txtNotepad.SelectionStart+1);
+            if (i == -1)
+            {
+                MessageBox.Show("NOT Found");
+                return false;
+            }
+            else
+            {
+                txtNotepad.SelectionStart = i;
+                txtNotepad.SelectionLength = s.Length;
+                txtNotepad.Focus();
+                return true;
+            }
+
+        }
+
+
 
     }
 }

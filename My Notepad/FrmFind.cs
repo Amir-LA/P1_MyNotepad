@@ -23,8 +23,19 @@ namespace My_Notepad
         private void btnfind_Click(object sender, EventArgs e)
         {
             //frmmain.Text = "aa";
+            
             frmmain.Findfunction(txtfind.Text);
 
+        }
+
+        private void btnfindnext_Click(object sender, EventArgs e)
+        {
+            frmmain.FindNextfunction(txtfind.Text);
+        }
+
+        private void bntclose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
