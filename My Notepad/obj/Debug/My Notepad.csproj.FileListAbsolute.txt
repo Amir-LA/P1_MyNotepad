@@ -8,3 +8,4 @@ E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.csproj.Generate
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.csproj.CoreCompileInputs.cache
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.exe
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.pdb
+E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My_Notepad.FrmFind.resources

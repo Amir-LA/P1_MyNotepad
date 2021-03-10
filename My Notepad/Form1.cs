@@ -180,5 +180,30 @@ namespace My_Notepad
         {
             txtNotepad.SelectAll();
         }
+
+        private void findToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFind f1 = new FrmFind(this);
+            f1.Show(this);
+        }
+
+        public Boolean Findfunction(string s)
+        {
+            int i;
+            i = txtNotepad.Text.IndexOf(s);
+            if (i == -1)
+            {
+                MessageBox.Show("Nof Found");
+                return false;
+            }
+            else
+            {
+                txtNotepad.SelectionStart = i;
+                txtNotepad.SelectionLength = s.Length;
+                txtNotepad.Focus();
+                return true;
+            }
+        }
+
     }
 }
