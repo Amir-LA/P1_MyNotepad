@@ -207,10 +207,14 @@ namespace My_Notepad
 
         }
 
-        public Boolean FindNextfunction(string s, StringComparison compairtype)
+        public Boolean FindNextfunction(string s, StringComparison compairtype, Boolean righttoleft)
         {
             int i;
+            if(righttoleft==true)
             i = txtNotepad.Text.IndexOf(s,txtNotepad.SelectionStart+1, compairtype);
+            else
+                i = txtNotepad.Text.LastIndexOf (s, txtNotepad.SelectionStart - 1, compairtype);
+
             if (i == -1)
             {
                 MessageBox.Show("NOT Found");

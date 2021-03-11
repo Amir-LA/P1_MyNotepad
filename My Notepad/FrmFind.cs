@@ -34,7 +34,7 @@ namespace My_Notepad
             if (hkmachcase.Checked == true)
                 a = StringComparison.Ordinal;
 
-            frmmain.FindNextfunction(txtfind.Text,a);
+            frmmain.FindNextfunction(txtfind.Text,a,rdodown.Checked);
         }
 
         private void bntclose_Click(object sender, EventArgs e)
