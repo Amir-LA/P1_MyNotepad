@@ -14,7 +14,7 @@ namespace My_Notepad
     {
         string fn;
         Boolean saveflag;
-        
+        MyUndo notepadUndo = new MyUndo();
 
         public Form1()
         {
@@ -230,7 +230,55 @@ namespace My_Notepad
 
         }
 
+        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtNotepad.Text = notepadUndo.Undo();
+        }
 
+        private void redoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtNotepad.Text = notepadUndo.Redo();
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            notepadUndo.settext(txtNotepad.Text);
+        }
+    }
+    // new class of MyUndo
+    public class MyUndo
+    {
+
+        string[] temp = new string[100];
+        int index;
+        int currentposition;
+        public MyUndo()
+        {
+            index = 0;
+            currentposition = 0;
+        }
+
+        public void settext(string s)
+        {
+            temp[index] = s;
+            currentposition = index;
+            ++index;
+
+        }
+
+        public string Undo()
+        {
+            if (currentposition > 0)
+                return temp[--currentposition];
+            return null;
+        }
+
+        public string Redo()
+        {
+            if (currentposition < index)
+                return temp[++currentposition];
+            return null;
+        }
 
     }
 }
