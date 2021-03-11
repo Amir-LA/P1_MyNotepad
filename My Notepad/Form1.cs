@@ -14,7 +14,7 @@ namespace My_Notepad
     {
         string fn;
         Boolean saveflag;
-        int i2,i3;
+        
 
         public Form1()
         {
@@ -207,10 +207,10 @@ namespace My_Notepad
 
         }
 
-        public Boolean FindNextfunction(string s)
+        public Boolean FindNextfunction(string s, StringComparison compairtype)
         {
             int i;
-            i = txtNotepad.Text.IndexOf(s,txtNotepad.SelectionStart+1);
+            i = txtNotepad.Text.IndexOf(s,txtNotepad.SelectionStart+1, compairtype);
             if (i == -1)
             {
                 MessageBox.Show("NOT Found");

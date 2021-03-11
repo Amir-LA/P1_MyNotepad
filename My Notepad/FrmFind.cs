@@ -30,7 +30,11 @@ namespace My_Notepad
 
         private void btnfindnext_Click(object sender, EventArgs e)
         {
-            frmmain.FindNextfunction(txtfind.Text);
+            StringComparison a = StringComparison.OrdinalIgnoreCase;
+            if (hkmachcase.Checked == true)
+                a = StringComparison.Ordinal;
+
+            frmmain.FindNextfunction(txtfind.Text,a);
         }
 
         private void bntclose_Click(object sender, EventArgs e)
