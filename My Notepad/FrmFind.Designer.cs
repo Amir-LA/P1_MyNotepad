@@ -43,9 +43,10 @@ namespace My_Notepad
             // 
             // btnfind
             // 
-            this.btnfind.Location = new System.Drawing.Point(337, 12);
+            this.btnfind.Location = new System.Drawing.Point(506, 18);
+            this.btnfind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnfind.Name = "btnfind";
-            this.btnfind.Size = new System.Drawing.Size(75, 23);
+            this.btnfind.Size = new System.Drawing.Size(112, 35);
             this.btnfind.TabIndex = 0;
             this.btnfind.Text = "Find";
             this.btnfind.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@ namespace My_Notepad
             // 
             // bntclose
             // 
-            this.bntclose.Location = new System.Drawing.Point(337, 79);
+            this.bntclose.Location = new System.Drawing.Point(506, 122);
+            this.bntclose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bntclose.Name = "bntclose";
-            this.bntclose.Size = new System.Drawing.Size(75, 23);
+            this.bntclose.Size = new System.Drawing.Size(112, 35);
             this.bntclose.TabIndex = 1;
             this.bntclose.Text = "Close";
             this.bntclose.UseVisualStyleBackColor = true;
@@ -64,25 +66,28 @@ namespace My_Notepad
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Location = new System.Drawing.Point(18, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "What find:";
             // 
             // txtfind
             // 
-            this.txtfind.Location = new System.Drawing.Point(85, 22);
+            this.txtfind.Location = new System.Drawing.Point(128, 34);
+            this.txtfind.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtfind.Name = "txtfind";
-            this.txtfind.Size = new System.Drawing.Size(237, 20);
+            this.txtfind.Size = new System.Drawing.Size(354, 26);
             this.txtfind.TabIndex = 3;
             // 
             // hkmachcase
             // 
             this.hkmachcase.AutoSize = true;
-            this.hkmachcase.Location = new System.Drawing.Point(15, 73);
+            this.hkmachcase.Location = new System.Drawing.Point(22, 112);
+            this.hkmachcase.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.hkmachcase.Name = "hkmachcase";
-            this.hkmachcase.Size = new System.Drawing.Size(80, 17);
+            this.hkmachcase.Size = new System.Drawing.Size(115, 24);
             this.hkmachcase.TabIndex = 4;
             this.hkmachcase.Text = "Mach Case";
             this.hkmachcase.UseVisualStyleBackColor = true;
@@ -91,9 +96,11 @@ namespace My_Notepad
             // 
             this.groupBox1.Controls.Add(this.rdoup);
             this.groupBox1.Controls.Add(this.rdodown);
-            this.groupBox1.Location = new System.Drawing.Point(120, 62);
+            this.groupBox1.Location = new System.Drawing.Point(180, 95);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(160, 50);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(240, 77);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Direction";
@@ -101,9 +108,10 @@ namespace My_Notepad
             // rdoup
             // 
             this.rdoup.AutoSize = true;
-            this.rdoup.Location = new System.Drawing.Point(11, 25);
+            this.rdoup.Location = new System.Drawing.Point(16, 38);
+            this.rdoup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdoup.Name = "rdoup";
-            this.rdoup.Size = new System.Drawing.Size(39, 17);
+            this.rdoup.Size = new System.Drawing.Size(55, 24);
             this.rdoup.TabIndex = 7;
             this.rdoup.Text = "Up";
             this.rdoup.UseVisualStyleBackColor = true;
@@ -112,9 +120,10 @@ namespace My_Notepad
             // 
             this.rdodown.AutoSize = true;
             this.rdodown.Checked = true;
-            this.rdodown.Location = new System.Drawing.Point(101, 23);
+            this.rdodown.Location = new System.Drawing.Point(152, 35);
+            this.rdodown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rdodown.Name = "rdodown";
-            this.rdodown.Size = new System.Drawing.Size(53, 17);
+            this.rdodown.Size = new System.Drawing.Size(75, 24);
             this.rdodown.TabIndex = 6;
             this.rdodown.TabStop = true;
             this.rdodown.Text = "Down";
@@ -122,9 +131,10 @@ namespace My_Notepad
             // 
             // btnfindnext
             // 
-            this.btnfindnext.Location = new System.Drawing.Point(337, 41);
+            this.btnfindnext.Location = new System.Drawing.Point(506, 63);
+            this.btnfindnext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnfindnext.Name = "btnfindnext";
-            this.btnfindnext.Size = new System.Drawing.Size(75, 23);
+            this.btnfindnext.Size = new System.Drawing.Size(112, 35);
             this.btnfindnext.TabIndex = 6;
             this.btnfindnext.Text = "Find Next";
             this.btnfindnext.UseVisualStyleBackColor = true;
@@ -132,9 +142,9 @@ namespace My_Notepad
             // 
             // FrmFind
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 127);
+            this.ClientSize = new System.Drawing.Size(645, 195);
             this.Controls.Add(this.btnfindnext);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.hkmachcase);
@@ -143,6 +153,7 @@ namespace My_Notepad
             this.Controls.Add(this.bntclose);
             this.Controls.Add(this.btnfind);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmFind";
             this.Text = "FrmFind";
             this.groupBox1.ResumeLayout(false);
@@ -155,13 +166,13 @@ namespace My_Notepad
         #endregion
 
         private System.Windows.Forms.Button btnfind;
-        private System.Windows.Forms.Button bntclose;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtfind;
-        private System.Windows.Forms.CheckBox hkmachcase;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rdoup;
-        private System.Windows.Forms.RadioButton rdodown;
         private System.Windows.Forms.Button btnfindnext;
+        protected System.Windows.Forms.Button bntclose;
+        protected System.Windows.Forms.TextBox txtfind;
+        protected System.Windows.Forms.CheckBox hkmachcase;
+        protected System.Windows.Forms.GroupBox groupBox1;
+        protected System.Windows.Forms.RadioButton rdoup;
+        protected System.Windows.Forms.RadioButton rdodown;
     }
 }

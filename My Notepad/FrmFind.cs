@@ -19,6 +19,12 @@ namespace My_Notepad
             frmmain = frm;
             InitializeComponent();
         }
+        public FrmFind()
+        {
+
+            
+            InitializeComponent();
+        }
 
         private void btnfind_Click(object sender, EventArgs e)
         {

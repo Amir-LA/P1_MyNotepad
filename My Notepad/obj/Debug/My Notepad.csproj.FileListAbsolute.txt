@@ -3,9 +3,10 @@ E:\Git\P1_ My Notepad\My Notepad\My Notepad\bin\Debug\My Notepad.exe
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\bin\Debug\My Notepad.pdb
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.csprojAssemblyReference.cache
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My_Notepad.Form1.resources
+E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My_Notepad.FrmFind.resources
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My_Notepad.Properties.Resources.resources
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.csproj.GenerateResource.cache
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.csproj.CoreCompileInputs.cache
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.exe
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.pdb
-E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My_Notepad.FrmFind.resources
+E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My_Notepad.Frmreplace.resources

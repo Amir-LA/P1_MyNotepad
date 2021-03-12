@@ -244,6 +244,18 @@ namespace My_Notepad
         {
             notepadUndo.settext(txtNotepad.Text);
         }
+
+        private void replaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frmreplace f = new Frmreplace(this);
+            f.Show(this);
+        }
+
+        public void replacefunction(string str)
+        {
+            if (txtNotepad.SelectionLength > 0)
+                txtNotepad.SelectedText = str;
+        }
     }
     // new class of MyUndo
     public class MyUndo
