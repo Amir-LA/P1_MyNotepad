@@ -269,6 +269,31 @@ namespace My_Notepad
             while (FindNextfunction(str1, cmptype, lefttoright))
                 replacefunction(str2);
         }
+
+        private void gotoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frmgotocs f = new Frmgotocs(this);
+            f.ShowDialog();
+
+        }
+
+        /// <summary>
+        /// number of lines
+        /// </summary>
+        /// <returns></returns>
+        public int getlines()
+        {
+            return txtNotepad.Lines.Count();
+        }
+
+
+        public void gotofunction(int x)
+        {
+            txtNotepad.SelectionStart = txtNotepad.GetFirstCharIndexFromLine(x);
+        }
+
+
+
     }
     // new class of MyUndo
     public class MyUndo

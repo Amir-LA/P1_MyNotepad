@@ -10,3 +10,4 @@ E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.csproj.CoreComp
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.exe
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My Notepad.pdb
 E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My_Notepad.Frmreplace.resources
+E:\Git\P1_ My Notepad\My Notepad\My Notepad\obj\Debug\My_Notepad.Frmgotocs.resources
