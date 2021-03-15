@@ -60,17 +60,29 @@ namespace My_Notepad
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            System.IO.File.WriteAllText(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt", txtNotepad.BackColor.Name);
+            string[] a = new string[5];
+            a[0] = txtNotepad.BackColor.Name;
+            a[1] = txtNotepad.Font.Name;
+            a[2] = txtNotepad.Font.Size.ToString();
+            a[3] = this.Height.ToString();
+            a[4] = this.Width.ToString();
+            System.IO.File.WriteAllLines(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt", a);
+            //System.IO.File.WriteAllText(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt", txtNotepad.BackColor.Name);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if(System.IO.File.Exists(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt") == true) { 
-            string s;
-            s = System.IO.File.ReadAllText(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt");
+            string[] x = new string[5];
+            if(System.IO.File.Exists(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt") == true)
+            {
+               
+                x=System.IO.File.ReadAllLines(@"E:\Git\P1_ My Notepad\My Notepad\layout.txt");
                 ToolStripMenuItem temp = new ToolStripMenuItem();
-                temp.Text = s;
+                temp.Text = x[0];
                 Setbk(temp, null);
+                txtNotepad.Font = new Font(x[1], Convert.ToInt16(x[2]));
+                this.Height = Convert.ToInt16(x[3]);
+                this.Width = Convert.ToInt16(x[4]);
                 saveflag = true;
             //txtNotepad.BackColor = Color.FromName(s);
                 
@@ -129,6 +141,7 @@ namespace My_Notepad
         private void txtNotepad_TextChanged(object sender, EventArgs e)
         {
             saveflag = false;
+            setrowcol();
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -293,7 +306,38 @@ namespace My_Notepad
         }
 
 
+        public void setrowcol()
+        {
+            int row = txtNotepad.GetLineFromCharIndex(txtNotepad.SelectionStart)+1;
+            int col = txtNotepad.SelectionStart - txtNotepad.GetFirstCharIndexOfCurrentLine()+1;
+            lblrowcol.Text = "Ln " + row.ToString() + " , col" + col.ToString();
+        }
 
+        private void txtNotepad_Click(object sender, EventArgs e)
+        {
+            setrowcol();
+        }
+
+        private void txtNotepad_KeyUp(object sender, KeyEventArgs e)
+        {
+            setrowcol();
+        }
+
+        public void setenables()
+        {
+            copyToolStripMenuItem.Enabled = Convert.ToBoolean(txtNotepad.SelectionLength);
+            cutToolStripMenuItem.Enabled = txtNotepad.SelectionLength > 0;
+            delToolStripMenuItem.Enabled = txtNotepad.SelectionLength > 0;
+            pasteToolStripMenuItem.Enabled = Clipboard.ContainsText();
+            findNextToolStripMenuItem.Enabled = txtNotepad.Text.Length > 0;
+            gotoToolStripMenuItem.Enabled = txtNotepad.TextLength > 0;
+            saveAsToolStripMenuItem.Enabled = !saveflag;
+        }
+
+        private void fileToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            setenables();
+        }
     }
     // new class of MyUndo
     public class MyUndo
