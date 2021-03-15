@@ -66,6 +66,7 @@ namespace My_Notepad
             this.btnreplaceall.TabIndex = 8;
             this.btnreplaceall.Text = "Replace All";
             this.btnreplaceall.UseVisualStyleBackColor = true;
+            this.btnreplaceall.Click += new System.EventHandler(this.btnreplaceall_Click);
             // 
             // label2
             // 

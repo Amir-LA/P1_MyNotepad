@@ -25,5 +25,14 @@ namespace My_Notepad
         {
             frmmain.replacefunction(txtreplace.Text);
         }
+
+        private void btnreplaceall_Click(object sender, EventArgs e)
+        {
+            StringComparison x = StringComparison.OrdinalIgnoreCase;
+            if (hkmachcase.Checked)
+                x = StringComparison.Ordinal;
+
+            frmmain.replaceallfunction(txtfind.Text, txtreplace.Text, x, rdodown.Checked);
+        }
     }
 }

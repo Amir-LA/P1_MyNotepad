@@ -256,6 +256,19 @@ namespace My_Notepad
             if (txtNotepad.SelectionLength > 0)
                 txtNotepad.SelectedText = str;
         }
+
+        /// <summary>
+        /// Method for replacing all components
+        /// </summary>
+        /// <param name="str1">the chosen string</param>
+        /// <param name="">the replaced string</param>
+        /// <param name="cmptype">comparison type</param>
+        /// <param name="lefttoright">comparison direction</param>
+        public void replaceallfunction(string str1,string str2,StringComparison cmptype, Boolean lefttoright)
+        {
+            while (FindNextfunction(str1, cmptype, lefttoright))
+                replacefunction(str2);
+        }
     }
     // new class of MyUndo
     public class MyUndo
