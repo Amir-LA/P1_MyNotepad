@@ -338,6 +338,29 @@ namespace My_Notepad
         {
             setenables();
         }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult x;
+
+            printDialog1.Document = printDocument1;
+            x=printDialog1.ShowDialog();
+
+            if (x == DialogResult.OK)
+                printDocument1.Print();
+           
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString(txtNotepad.Text, txtNotepad.Font, Brushes.Black, 0, 0);
+        }
+
+        private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.ShowDialog();
+        }
     }
     // new class of MyUndo
     public class MyUndo
